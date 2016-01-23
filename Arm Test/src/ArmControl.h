@@ -23,13 +23,14 @@ public:
 private:
 	DoubleSolenoid *pistonL;
 	DoubleSolenoid *pistonR;
-	Talon* motorL;
-	Talon* motorR;
+	Talon* grabberMotor;
+	Talon* throwerMotor;
 	Compressor *compressor;
 	NewXboxController *xbox;
 
 	bool isPistonExtended;
 	double motorOutput;
+	double motorOutput2;
 
 	virtual ~ArmControl();
 
@@ -51,6 +52,9 @@ private:
 	void ballIn();
 	void ballOut();
 	void ballStop();
+	void throwerIn();
+	void throwerOut();
+	void throwerStop();
 	void motorUpdate();
 };
 
